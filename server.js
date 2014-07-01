@@ -1,9 +1,15 @@
-var http = require("http");
+// web.js
+var express = require("express");
+var logfmt = require("logfmt");
+var app = express();
 
-server = http.createServer(function(req, res){
-   res.end("Hello world!");
+app.use(logfmt.requestLogger());
+
+app.get('/', function(req, res) {
+  res.send('Hello World!');
 });
 
-server.listen(6666, function(){
-   console.log("Listening on 6666");
+var port = Number(process.env.PORT || 5000);
+app.listen(port, function() {
+  console.log("Listening on " + port);
 });
