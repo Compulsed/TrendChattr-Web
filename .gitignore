@@ -1,4 +1,6 @@
 node_modules
-*.log
+temp
 .sass-cache
 .tmp
+app/bower_components
+test/bower_components

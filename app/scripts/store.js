@@ -1,0 +1,1 @@
+Trendchattr.ApplicationAdapter = DS.FixtureAdapter;
