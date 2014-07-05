@@ -8,6 +8,7 @@ require('scripts/routes/*');
 require('scripts/components/*');
 require('scripts/views/*');
 require('scripts/router');
+require('scripts/custom');
 
 Ember.LinkView.reopen({
 	attributeBindings: ['data-toggle', 'data-target']
