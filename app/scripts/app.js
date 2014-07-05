@@ -1,5 +1,7 @@
 var Trendchattr = window.Trendchattr = Ember.Application.create();
 
+Trendchattr.ApplicationAdapter = DS.FixtureAdapter.extend();
+
 /* Order and include as you please. */
 require('scripts/controllers/*');
 require('scripts/store');
