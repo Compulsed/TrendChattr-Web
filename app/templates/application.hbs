@@ -11,11 +11,11 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                {{#link-to 'chat' tagName='li' data-toggle="collapse" data-target=".navbar-collapse"}}
-                    <a href="#">Chat</a>
+                {{#link-to 'chat' tagName='li' }}
+                    {{#link-to 'chat' toggle-data="collapse" toggle-target=".navbar-collapse"}}Chat{{/link-to}}
                 {{/link-to}}
-                {{#link-to 'about' tagName='li' data-toggle="collapse" data-target=".navbar-collapse"}}
-                    <a href="#">About</a>
+                {{#link-to 'about' tagName='li'}}
+                    {{#link-to 'about' toggle-data="collapse" toggle-target=".navbar-collapse"}}About{{/link-to}}
                 {{/link-to}}
             </ul>
         </div>
