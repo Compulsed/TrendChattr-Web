@@ -2,6 +2,7 @@
   "name": "trendchattr",
   "version": "0.0.0",
   "dependencies": {
+    "coffee": "0.0.1",
     "express": "^4.5.0",
     "gzippo": "^0.2.0",
     "morgan": "^1.1.1"
