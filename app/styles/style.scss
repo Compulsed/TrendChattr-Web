@@ -38,3 +38,74 @@ html, body {
 	box-shadow: 0px -1px 10px #888888;
 	-webkit-box-shadow: 0px -1px 10px #888888;
 }
+
+/*
+	: Side panel compoent
+*/
+
+.sidepanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease;
+  -ms-transition: -ms-transform 0.3s ease;
+  transition: transform .3s ease;
+}
+.sidepanel.opened {
+  -webkit-transform: translate(0%, 0);
+  -moz-transform: translate(0%, 0);
+  -ms-transform: translate(0%, 0);
+  transform: translate(0%, 0);
+}
+.sidepanel.closed {
+  -webkit-transform: translate(-95%, 0);
+  -moz-transform: translate(-95%, 0);
+  -ms-transform: translate(-95%, 0);
+  transform: translate(-95%, 0);
+}
+
+.viewport {
+  overflow: hidden;
+  padding: 25px 75px;
+  position: fixed;
+  top: 55px;
+  bottom: 65px;
+  left: 0px;
+  right: 35px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.sidepanel{
+  width: 200px;
+  height: 100%;
+  padding: 5px;
+  background: #eee;
+  border: 1px solid #ccc;
+}
+
+.sidepanel .btn-toggle {
+  display: inline-block;
+  position: absolute;
+  left: 100%;
+  margin: 0;
+  margin-left: -12px;
+  margin-top: 20px;
+
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  color: black;
+  text-decoration: none;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.sidepanel .btn-toggle:hover {
+  background: #ddd;
+}
+
+.sidepanel-contents{
+
+}
