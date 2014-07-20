@@ -3,15 +3,35 @@ $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
 
 /* Put your CSS here */
 html, body {
-    margin: 30px 0;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+
+    background: #f0f0f0;
+
+    height: 90%;
 }
+
+/*
+  Height percent properties, will probably cause bugs
+*/
+#main{
+  height: 100%;
+}
+
+.ember-view{
+  height: 100%;
+}
+
+#chat-messages{
+  height: 90%;
+}
+/*
+  Main content
+*/
 
 #main {
 	display: block;
 	margin: 71px 0;
-	overflow-y: scroll;
 }
 
 .col-username {
@@ -39,14 +59,37 @@ html, body {
 	-webkit-box-shadow: 0px -1px 10px #888888;
 }
 
+.well{
+  border: 1px solid #999999 !important;
+}
+
+#chat-messages{
+   border: 1px solid #999999;
+   border-radius: 3px;
+   background: white;
+
+   overflow: scroll;
+}
+
+
 /*
 	: Side panel compoent
 */
 
 .sidepanel {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: 40px;
+  left: -25px;
+
+  margin: 10px 25px;
+
+  width: 200px;
+  height: 100%;
+  padding: 20px;
+  background: #eee;
+  border: 1px solid #999999;
+  z-index: 100;
+
   -webkit-transition: -webkit-transform 0.3s ease;
   -moz-transition: -moz-transform 0.3s ease;
   -ms-transition: -ms-transform 0.3s ease;
@@ -65,7 +108,7 @@ html, body {
   transform: translate(-95%, 0);
 }
 
-.viewport {
+/*.viewport {
   overflow: hidden;
   padding: 25px 75px;
   position: fixed;
@@ -73,16 +116,10 @@ html, body {
   bottom: 40px;
   left: 0px;
   right: 35px;
-  background: rgba(0, 0, 0, 0);
-}
 
-.sidepanel{
-  width: 200px;
-  height: 100%;
-  padding: 5px;
-  background: #eee;
-  border: 1px solid #ccc;
-}
+  outline: 1px solid blue;
+}*/
+
 
 .sidepanel .btn-toggle {
   display: inline-block;
@@ -93,7 +130,7 @@ html, body {
   margin-top: 20px;
 
   background: #f1f1f1;
-  border: 1px solid #ccc;
+  border: 1px solid #999999;
   padding: 5px 10px;
   color: black;
   text-decoration: none;
@@ -109,3 +146,7 @@ html, body {
 .sidepanel-contents{
 
 }
+
+/*
+  Height properties
+*/

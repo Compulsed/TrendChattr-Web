@@ -4,6 +4,7 @@ Trendchattr.Router.map(function () {
 
   this.resource('rooms', function(){
     this.resource('room', {path: '/:room_id'}, function(){
+
     });
   });
 });

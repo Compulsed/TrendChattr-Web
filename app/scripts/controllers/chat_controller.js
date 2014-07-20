@@ -5,8 +5,6 @@ Trendchattr.RoomsController = Ember.ArrayController.extend({
 });
 
 Trendchattr.RoomController = Ember.ObjectController.extend({
-	roomId: 1,
-
 	actions: {
 		newMessage: null, // From the user input
 		sendMessage: function() {
@@ -14,9 +12,12 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 			if (!messageText) { return false; }
 			if (!messageText.trim()) { return; }
 
-			this.set('newMessage', '');	// Clears the text
+			this.set('newMessage', '');						// Clears the text
+			this.get('comments').pushObject(messageText);	// Pushes to the model
 
-			this.get('comments').pushObject(messageText);
+			  var elem = document.getElementById('chat-messages');
+			  elem.scrollTop = elem.scrollHeight;
+
 
 			return false;
 		}

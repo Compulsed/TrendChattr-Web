@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="well">
+        <h3>Room selection</h3>
+
+        {{#each chatroom in model}}
+            {{#link-to "room" chatroom.id}}
+                <li>{{chatroom.chatroom}} : {{chatroom.joined}}</li>
+            {{/link-to}}
+        {{/each}}
+
+    </div>
+</div>

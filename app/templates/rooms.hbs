@@ -1,17 +1,15 @@
-<div class="viewport">
-    <!-- // the name value is passed to the component -->
-    {{#side-panel name="Trends" isOpen=false}}
-    <div class="sidepanel-contents">
-        <!-- // is placed within the yield of the component -->
-        {{#each chatroom in model}}
-            {{#link-to "room" chatroom.id}}
-                <li>{{chatroom.chatroom}} : {{chatroom.joined}}</li>
-            {{/link-to}}
-        {{/each}}
+<!-- // the name value is passed to the component -->
+{{#side-panel name="Trends" isOpen=false}}
+<div class="sidepanel-contents">
+    <!-- // is placed within the yield of the component -->
+    {{#each chatroom in model}}
+        {{#link-to "room" chatroom.id}}
+            <li>{{chatroom.chatroom}} : {{chatroom.joined}}</li>
+        {{/link-to}}
+    {{/each}}
 
-    </div>
-    {{/side-panel}}
 </div>
+{{/side-panel}}
 
 <div class="container">
     <h1>Rooms</h1>
