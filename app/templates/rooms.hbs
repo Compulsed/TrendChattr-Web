@@ -4,7 +4,7 @@
     <div class="sidepanel-contents">
         <!-- // is placed within the yield of the component -->
         {{#each chatroom in model}}
-            {{#link-to 'rooms'}}
+            {{#link-to "room" chatroom.id}}
                 <li>{{chatroom.chatroom}} : {{chatroom.joined}}</li>
             {{/link-to}}
         {{/each}}
@@ -16,9 +16,6 @@
 <div class="container">
     <h1>Rooms</h1>
     <h3>Total rooms active: {{totalRooms}}</h3>
-    <div class="well">
-        <p>Swag</p>
-    </div>
 </div>
 
 {{outlet}} <!-- // Outlet for the room.hbs -->
