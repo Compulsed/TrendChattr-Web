@@ -5,3 +5,11 @@ Trendchattr.ApplicationRoute = Ember.Route.extend({
         return ['red', 'yellow', 'blue'];
     }
 });
+
+Trendchattr.RoomsRoute = Ember.Route.extend({
+
+});
+
+Trendchattr.RoomRoute = Ember.Route.extend({
+
+});

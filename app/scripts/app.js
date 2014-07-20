@@ -1,4 +1,6 @@
-var Trendchattr = window.Trendchattr = Ember.Application.create();
+var Trendchattr = window.Trendchattr = Ember.Application.create({
+        LOG_TRANSITIONS: true
+});
 
 Trendchattr.ApplicationAdapter = DS.FixtureAdapter.extend();
 
