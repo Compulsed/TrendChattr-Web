@@ -143,8 +143,16 @@ html, body {
   background: #ddd;
 }
 
-.sidepanel-contents{
+.sidepanel-spacing{
+  padding: 10px;
+  background: white;
+  border: 1px solid #999999;
 
+  border-radius: 15px;
+}
+
+.sidepanel li{
+  list-style-type: none;
 }
 
 /*

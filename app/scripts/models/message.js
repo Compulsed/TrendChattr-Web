@@ -16,7 +16,22 @@ Trendchattr.Chatroom.FIXTURES = [{
     comments: ["Room Dan"]
 },{
     id: 3,
-    chatroom: "Room Msc",
+    chatroom: "Room Fun",
+    joined: "0",
+    comments: ["Room Msc"]
+},{
+    id: 4,
+    chatroom: "Room Blazeit",
+    joined: "0",
+    comments: ["Room Msc"]
+},{
+    id: 5,
+    chatroom: "This not a room",
+    joined: "1",
+    comments: ["Room Msc"]
+},{
+    id: 6,
+    chatroom: "Room Cool Room",
     joined: "0",
     comments: ["Room Msc"]
 }];
