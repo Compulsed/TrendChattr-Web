@@ -4,12 +4,12 @@ Trendchattr.Message = DS.Model.extend({
 });
 
 Trendchattr.Message.FIXTURES = [{
-    id: 1,
+    id: 10,
     username: "dale",
     message: "swag",
     room: "swag"
 }, {
-    id: 2,
+    id: 11,
     username: "dan",
     message: "I know you are",
     room: "swag"
@@ -33,5 +33,10 @@ Trendchattr.Chatroom.FIXTURES = [{
     chatroom: "Room Dan",
     joined: "50",
     comments: ["This is cool", "YEAH I KNOW"]
+},{
+    id: 3,
+    chatroom: "Room Msc",
+    joined: "0",
+    comments: ["Nothing", "is going on", "here"]
 }];
 

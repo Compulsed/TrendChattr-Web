@@ -4,21 +4,20 @@ Trendchattr.RoomsController = Ember.ArrayController.extend({
   }.property('@each')
 });
 
-Trendchattr.RoomController = Ember.ArrayController.extend({
+Trendchattr.RoomController = Ember.ObjectController.extend({
+	roomId: 1,
+
 	actions: {
+		newMessage: null, // From the user input
 		sendMessage: function() {
 			var messageText = this.get('newMessage'); // From the html input
 			if (!messageText) { return false; }
 			if (!messageText.trim()) { return; }
 
-			var newMessage = this.store.createRecord('message', {
-				username: "Anon",
-				message: messageText
-			});
+			this.set('newMessage', '');	// Clears the text
 
-			this.set('newMessage', '');
+			this.get('comments').pushObject(messageText);
 
-			newMessage.save();
 			return false;
 		}
 	}
