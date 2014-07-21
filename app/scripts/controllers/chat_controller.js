@@ -1,3 +1,7 @@
+Trendchattr.ApplicationController = Ember.ObjectController.extend({
+	someValue: 10
+});
+
 Trendchattr.RoomsController = Ember.ArrayController.extend({
   totalRooms: function(){
     return this.get('model.length');
@@ -5,6 +9,12 @@ Trendchattr.RoomsController = Ember.ArrayController.extend({
 });
 
 Trendchattr.RoomController = Ember.ObjectController.extend({
+	// Connects the Application controller to the variable application
+	needs: 'application',
+	application: Ember.computed.alias("controllers.application"),
+
+	username: null,
+
 	actions: {
 		newMessage: null, // From the user input
 		sendMessage: function() {
@@ -13,10 +23,11 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 			if (!messageText.trim()) { return; }
 
 			this.set('newMessage', '');						// Clears the text
-			this.get('comments').pushObject(messageText);	// Pushes to the model
+			this.get('comments').pushObject({username: this.get('application.username'), message: messageText});	// Pushes to the model
 
-			  var elem = document.getElementById('chat-messages');
-			  elem.scrollTop = elem.scrollHeight;
+			// Forces the text box to the bottom of the div
+			var elem = document.getElementById('chat-messages');
+			elem.scrollTop = elem.scrollHeight;
 
 
 			return false;
