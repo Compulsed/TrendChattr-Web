@@ -16,4 +16,3 @@ Trendchattr.SidePanelComponent = Em.Component.extend({
       }
     }
 });
-
