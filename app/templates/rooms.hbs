@@ -1,0 +1,18 @@
+<!-- // the name value is passed to the component -->
+{{#side-panel name="Trends" isOpen=false}}
+<div class="sidepanel-contents">
+    <!-- // is placed within the yield of the component -->
+    {{#each chatroom in model}}
+        {{#link-to "room" chatroom.id}}
+            <li>{{chatroom.chatroom}} : {{chatroom.joined}}</li>
+        {{/link-to}}
+    {{/each}}
+
+</div>
+{{/side-panel}}
+
+<div class="container">
+    <h1>Rooms</h1>
+</div>
+
+{{outlet}} <!-- // Outlet for the room.hbs -->

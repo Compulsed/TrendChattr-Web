@@ -1,6 +1,12 @@
 Trendchattr.Router.map(function () {
-  this.resource('chat', { path: '/' });
-  this.resource('about');
+  this.route('index', {path: '/'});
+  this.route('about');
+
+  this.resource('rooms', function(){
+    this.resource('room', {path: '/:room_id'}, function(){
+
+    });
+  });
 });
 
 Trendchattr.ChatRoute = Ember.Route.extend({

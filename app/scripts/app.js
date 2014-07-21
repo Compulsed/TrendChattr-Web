@@ -5,6 +5,9 @@ var Trendchattr = window.Trendchattr = Ember.Application.create({
 	    controllers: ['chat']
 	})
 });
+var Trendchattr = window.Trendchattr = Ember.Application.create({
+        LOG_TRANSITIONS: true
+});
 
 Trendchattr.ApplicationAdapter = DS.FixtureAdapter.extend();
 
