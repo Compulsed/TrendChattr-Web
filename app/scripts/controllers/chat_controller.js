@@ -15,5 +15,16 @@ Trendchattr.ChatController = Ember.ArrayController.extend({
 			newMessage.save();
 			return false;
 		}
+	},
+	sockets: {
+		message: function(messageData){
+			var newMessage = Ember.store.createRecord('message', {
+				username: messageData.username,
+				message: messageData.message
+			});
+
+			newMessage.save();
+			return false;
+		}
 	}
 });

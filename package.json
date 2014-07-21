@@ -4,9 +4,18 @@
   "dependencies": {
     "coffee": "0.0.1",
     "coffee-script": "^1.7.1",
+    "ember-sockets": "^0.6.3",
     "express": "^4.5.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.0",
     "gzippo": "^0.2.0",
-    "morgan": "^1.1.1"
+    "mocha": "^1.20.1",
+    "morgan": "^1.1.1",
+    "should": "^4.0.4",
+    "socket.io": "^1.0.6",
+    "underscore": "^1.6.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

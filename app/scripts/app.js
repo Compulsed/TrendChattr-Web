@@ -1,4 +1,10 @@
-var Trendchattr = window.Trendchattr = Ember.Application.create();
+var Trendchattr = window.Trendchattr = Ember.Application.create({
+    Socket: EmberSockets.extend({
+	    host: 'localhost',
+	    port: 8080,
+	    controllers: ['chat']
+	})
+});
 
 Trendchattr.ApplicationAdapter = DS.FixtureAdapter.extend();
 
