@@ -6,25 +6,36 @@ Trendchattr.ChatController = Ember.ArrayController.extend({
 			if (!messageText.trim()) { return; }
 
 			var newMessage = this.store.createRecord('message', {
-				username: "Anon",
+				trend: 'All',
+				user: "Anon",
 				message: messageText
 			});
 
 			this.set('newMessage', '');
 
 			newMessage.save();
+			this.socket.emit('message', {
+				trend: 'All',
+				user: "Anon",
+				message: messageText
+			});
 			return false;
 		}
 	},
 	sockets: {
 		message: function(messageData){
-			var newMessage = Ember.store.createRecord('message', {
-				username: messageData.username,
+			var newMessage = this.store.createRecord('message', {
+				trend: messageData.trend,
+				user: messageData.user,
 				message: messageData.message
 			});
 
 			newMessage.save();
-			return false;
+		},
+		connect: function() {},
+		disconnect: function() {},
+		error: function(errorData){
+			console.log(errorData);
 		}
 	}
 });
