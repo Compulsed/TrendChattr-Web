@@ -19,16 +19,25 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 			if (!messageText.trim()) { return; }
 
 			this.set('newMessage', '');					// Clears the text
-			this.get('chatMessages').pushObject({username: this.get('application.username'), message: messageText});	// Pushes to the model
 
+			var thisChatroom = this.store.find('chatroom', this.get('id'));
+
+			var newMessage = this.store.createRecord('message', {
+				username: this.get('application.username'),
+				message: messageText,
+				chatroom: this.store.getById('chatroom', this.get('id')),
+				sent: Date.now
+			});
+
+			newMessage.save();
 			// Forces the text box to the bottom of the div
 			// This is normal DOM javascript
 			var elem = document.getElementById('chat-messages');
 			elem.scrollTop = elem.scrollHeight;
 
 			this.socket.emit('message', {
-				trend: 'All',
-				username: "Anon",
+				chatroom: this.get("id"),
+				username: this.get('application.username'),
 				message: messageText
 			});
 			return false;
@@ -36,15 +45,19 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 	},
 	sockets: {
 		message: function(messageData){
+			console.log(messageData);
 			var newMessage = this.store.createRecord('message', {
-				trend: messageData.trend,
-				user: messageData.username,
-				message: messageData.message
+				chatroom: this.store.getById('chatroom', this.get(messageData.trend)),
+				username: messageData.username,
+				message: messageData.message,
+				sent: messageData.sent
 			});
 
 			newMessage.save();
 		},
-		connect: function() {},
+		connect: function() {
+			console.log("Just connected");
+		},
 		disconnect: function() {},
 		error: function(errorData){
 			console.log(errorData);

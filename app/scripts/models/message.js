@@ -31,8 +31,6 @@
 	- })
 */
 
-
-
 Trendchattr.Trend = DS.Model.extend({
 	_id: DS.attr('string'),
 	source: DS.attr('string'),
@@ -74,17 +72,7 @@ Trendchattr.Message = DS.Model.extend({
     })
 });
 
-Trendchattr.Message.FIXTURES = [{
-    id: 1,
-    chatroom: 1,
-    username: "Dale",
-    message: "Test message with id 1"
-}, {
-    id: 2,
-    chatroom: 1,
-    username: "Dale",
-    message: "Test message with id 2"
-}];
+Trendchattr.Message.FIXTURES = [];
 
 
 /*
@@ -100,13 +88,11 @@ Trendchattr.Chatroom = DS.Model.extend({
 Trendchattr.Chatroom.FIXTURES = [{
     id: 1,
     chatroom: "Room Dale",
-    joined: "10",
-    chatMessages: []    // The Ids of the messages
+    joined: "10"    // The Ids of the messages
 }, {
     id: 2,
     chatroom: "Room Dan",
-    joined: "50",
-    chatMessages: []
+    joined: "50"
 }];
 
 
