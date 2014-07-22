@@ -89,6 +89,28 @@ html, body{
 	color: blue;
 }
 
+.message-row{
+  margin: 10px 0 10px;
+}
+
+.message{
+  border: 1px solid #aaa;
+  padding: 20px;
+
+  border-radius: 15px;
+}
+
+.message-yours{
+  border-color: rgba(0, 180, 0, .8);
+  background: rgba(100, 250, 100, .2);
+}
+
+.message-theirs{
+  border-color: rgba(180, 0, 0, .8);
+  background: rgba(250, 100, 100, .2);
+}
+
+
 .message-input-container * {
 	position: fixed;
 	width: 100%;
