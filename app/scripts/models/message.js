@@ -31,14 +31,6 @@
 	- })
 */
 
-Trendchattr.Message = DS.Model.extend({
-	chatroom: DS.belongsTo('chatroom'),
-	username: DS.attr('string'),			// Not a reference for obvious reasons, but maybe could be?
-	message: DS.attr('string'),
-	sent: DS.attr('date', {
-		defaultValue: function() { return new Date(); }
-	})
-});
 
 
 Trendchattr.Trend = DS.Model.extend({
@@ -54,7 +46,6 @@ Trendchattr.Trend.FIXTURES = [
 	}
 ]
 
-
 /*
 	The User record
 */
@@ -62,7 +53,6 @@ Trendchattr.User = DS.Model.extend({
 	// 	_id: DS.attr('string'),			// Was originally _id, this for mongo?
     username: DS.attr('string'),
 	online: DS.attr('boolean'),
-	messages: DS.hasMany('message')
 });
 
 Trendchattr.User.FIXTURES = [{
@@ -72,13 +62,38 @@ Trendchattr.User.FIXTURES = [{
 }];
 
 
+/*
+    The messages
+*/
+Trendchattr.Message = DS.Model.extend({
+    chatroom: DS.belongsTo('chatroom'),
+    username: DS.attr('string'),            // Not a reference for obvious reasons, but maybe could be?
+    message: DS.attr('string'),
+    sent: DS.attr('date', {
+        defaultValue: function() { return new Date(); }
+    })
+});
 
-// Rooms
+Trendchattr.Message.FIXTURES = [{
+    id: 1,
+    chatroom: 1,
+    username: "Dale",
+    message: "Test message with id 1"
+}, {
+    id: 2,
+    chatroom: 1,
+    username: "Dale",
+    message: "Test message with id 2"
+}];
+
+
+/*
+    The Chatroom
+*/
 Trendchattr.Chatroom = DS.Model.extend({
     chatroom: DS.attr('string'),
     joined: DS.attr('number', {defaultValue: false}),
-    comments: DS.attr([])
-    // comments: DS.hasMany('message')
+    chatMessages: DS.hasMany('message')
 });
 
 
@@ -86,29 +101,12 @@ Trendchattr.Chatroom.FIXTURES = [{
     id: 1,
     chatroom: "Room Dale",
     joined: "10",
-    comments: [{
-        username: "dale",
-        message: "What up"
-    },{
-        username: "dan",
-        message: "hey man, nothing much you?"
-    },{
-        username: "dale",
-        message: "Just chilling"
-    }]
+    chatMessages: []    // The Ids of the messages
 }, {
     id: 2,
     chatroom: "Room Dan",
     joined: "50",
-    comments: [{
-        username: "dale",
-        message: "What up"
-    },{
-        username: "dan",
-        message: "hey man, nothing much you?"
-    },{
-        username: "dale",
-        message: "Just chilling"
-    }]
+    chatMessages: []
 }];
+
 

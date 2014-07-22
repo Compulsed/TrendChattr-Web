@@ -19,7 +19,7 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 			if (!messageText.trim()) { return; }
 
 			this.set('newMessage', '');					// Clears the text
-			this.get('comments').pushObject({username: this.get('application.username'), message: messageText});	// Pushes to the model
+			this.get('chatMessages').pushObject({username: this.get('application.username'), message: messageText});	// Pushes to the model
 
 			// Forces the text box to the bottom of the div
 			// This is normal DOM javascript
