@@ -4,9 +4,7 @@ Trendchattr.Router.map(function () {
 
 	this.resource('rooms', function(){
 		this.resource('room', {path: '/:room_id'}, function(){
-			this.resource('message', {path: '/:message_id'}, function(){
-
-			});
+            // May remove this
 		});
 	});
 });

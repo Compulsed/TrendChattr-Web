@@ -1,7 +1,7 @@
 // Top level
 Trendchattr.ApplicationRoute = Ember.Route.extend({
     model: function () {
-        return this.store.find('username', 1);
+        return this.store.find('user', 1);
     }
 });
 
