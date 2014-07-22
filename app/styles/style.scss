@@ -269,3 +269,60 @@ html, body{
 .sidepanel .glyphicon{
   margin-right: 5px;
 }
+
+/*
+  : Homepage Cover;
+*/
+
+.cover-container{
+    padding: 75px 0px 75px 0px;
+
+    margin-top: -30px;
+
+    border-top: 3px solid rgb(50,150,200);
+    border-bottom: 3px solid rgb(50,150,200);
+
+    background-image: url(http://128.199.211.76/wallpaper-2625117.jpg);
+    background-size:cover;
+    background-repeat: no-repeat no-repeat;
+
+    margin-bottom: 100px;
+}
+
+.contents{
+    padding: 20px;
+}
+
+.contents-border{
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, .9);
+    border-radius: 3px;
+    border: 1px solid #a3a3a3;
+}
+
+.button{
+    transition: all 1s ease;
+
+    padding: 10px 25px 10px 25px;
+    border: 1px solid rgb(50,150,200);
+    background: rgba(0, 0, 0, 0);
+    color: rgb(50,150,200);
+    border-radius: 3px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.button:hover{
+    transition: all 1s ease;
+
+    border: 1px solid white;
+    color: white;
+    background: rgb(50,150,200);
+}
+
+.cover-container .glyphicon{
+  font-size: 132px;
+  color: #5CADFF;
+}
