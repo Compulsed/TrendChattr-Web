@@ -6,14 +6,50 @@ html, body {
     margin: 0px;
     padding: 0px;
 
-    background: #f0f0f0;
+    background: #C3E1FF;
 
-    height: 90%;
 }
 
+
 /*
-  Height percent properties, will probably cause bugs
+  : Bootstrap Colour changes
 */
+
+.navbar{
+  background: #5CADFF;
+  border-color: #0066FF;
+}
+
+.navbar-brand{
+  color: white !important;
+  font-weight: 800;
+  letter-spacing:1px;
+}
+
+
+.navbar-nav .active{
+  background: #C3E1FF !important;
+}
+
+
+.navbar-nav li a{
+  color: white !important;
+}
+
+.navbar-nav li .active{
+  color: #0066FF !important;
+}
+
+
+/*
+  : Height percent properties, will probably cause bugs
+*/
+
+
+html, body{
+  height: 90%;
+}
+
 #main{
   height: 100%;
 }
@@ -25,9 +61,16 @@ html, body {
 #chat-messages{
   height: 90%;
 }
+
 /*
-  Main content
+   : Main content
 */
+
+.well{
+  border: 1px solid #999999 !important;
+  box-shadow:  1px 1px 10px 0px rgba(0, 112, 255, 0.4);
+
+}
 
 #main {
 	display: block;
@@ -56,20 +99,54 @@ html, body {
 .message-input-container input {
 	text-align: center;
 	box-shadow: 0px -1px 10px #888888;
-	-webkit-box-shadow: 0px -1px 10px #888888;
 }
 
-.well{
-  border: 1px solid #999999 !important;
-}
+
 
 #chat-messages{
    border: 1px solid #999999;
    border-radius: 3px;
    background: white;
+   box-shadow:  1px 1px 10px 0px rgba(0, 112, 255, 0.4);
+
 
    overflow: scroll;
 }
+
+/*
+  : Room styling;
+*/
+
+
+
+.room-selection ul{
+  margin: 0;
+  padding: 0;
+}
+
+.room-selection ul a{
+  text-decoration: none;
+}
+
+.room-selection li{
+  list-style-type: none;
+  border: 1px solid #ddd;
+
+  margin: 2px 0 2px;
+  padding: 10px;
+
+  font-size: 18px;
+}
+
+.room-selection ul a li:hover{
+  background: #C3E1FF;
+  border: 1px solid #0066FF;
+}
+
+.room-selection .glyphicon{
+  color: #d44950;
+}
+
 
 
 /*
@@ -85,9 +162,21 @@ html, body {
 
   width: 200px;
   height: 100%;
-  padding: 20px;
-  background: #eee;
-  border: 1px solid #999999;
+
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, #4D4D4D),
+    color-stop(1, #373737)
+  );
+  background-image: -o-linear-gradient(right, #4D4D4D 0%, #373737 100%);
+  background-image: -moz-linear-gradient(right, #4D4D4D 0%, #373737 100%);
+  background-image: -webkit-linear-gradient(right, #4D4D4D 0%, #373737 100%);
+  background-image: -ms-linear-gradient(right, #4D4D4D 0%, #373737 100%);
+  background-image: linear-gradient(to right, #4D4D4D 0%, #373737 100%);
+
+  border: 1px solid black;
   z-index: 100;
 
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -108,19 +197,6 @@ html, body {
   transform: translate(-95%, 0);
 }
 
-/*.viewport {
-  overflow: hidden;
-  padding: 25px 75px;
-  position: fixed;
-  top: 45px;
-  bottom: 40px;
-  left: 0px;
-  right: 35px;
-
-  outline: 1px solid blue;
-}*/
-
-
 .sidepanel .btn-toggle {
   display: inline-block;
   position: absolute;
@@ -129,32 +205,45 @@ html, body {
   margin-left: -12px;
   margin-top: 20px;
 
-  background: #f1f1f1;
-  border: 1px solid #999999;
+  background: #5CADFF;
+  border: 1px solid #0066FF;
+
   padding: 5px 10px;
-  color: black;
+  color: rgb(250, 250, 250);
   text-decoration: none;
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
 .sidepanel .btn-toggle:hover {
-  background: #ddd;
+  color: #0066FF;
 }
 
-.sidepanel-spacing{
-  padding: 10px;
-  background: white;
-  border: 1px solid #999999;
-
-  border-radius: 15px;
+.sidepanel a{
+  text-decoration: none;
 }
 
 .sidepanel li{
+  width: 100%;
+  height: 30px;
+  border: 1px solid black;
+
+  margin: 2px 0 2px 0;
+
+  color: #fafafa;
+
+  padding-left: 10px;
+  padding-top: 5px;
+
   list-style-type: none;
 }
 
-/*
-  Height properties
-*/
+.sidepanel li:hover{
+  background: rgb(27, 27, 27);
+}
+
+.sidepanel .glyphicon{
+  margin-right: 5px;
+}

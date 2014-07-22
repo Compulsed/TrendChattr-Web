@@ -1,14 +1,20 @@
+<div class="container">
+    <h1>{{chatroom}}</h1>
+</div>
+
+
 <div class="container" id="chat-messages">
-    <h4>{{chatroom}}</h4>
     {{#each chatMessages}}
     <div class="row">
+
         <div class="col-md-2 col-xs-4 col-md-offset-3 col-username">
             <span class="username">{{this.username}}</span> says:
         </div>
         <div class="col-md-2 col-xs-8">
             {{this.message}}
         </div>
-        <hr></hr>
+
+
     </div>
     {{/each}}
 </div>

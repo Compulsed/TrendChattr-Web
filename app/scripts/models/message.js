@@ -72,7 +72,12 @@ Trendchattr.Message = DS.Model.extend({
     })
 });
 
-Trendchattr.Message.FIXTURES = [];
+Trendchattr.Message.FIXTURES = [{
+    id: 1,
+    chatroom: 1,
+    username: "Annon",
+    message: "SOME MESSAGE"
+}];
 
 
 /*
@@ -87,11 +92,67 @@ Trendchattr.Chatroom = DS.Model.extend({
 
 Trendchattr.Chatroom.FIXTURES = [{
     id: 1,
-    chatroom: "Room Dale",
+    chatroom: "#iOS 8",
     joined: "10"    // The Ids of the messages
 }, {
     id: 2,
-    chatroom: "Room Dan",
+    chatroom: "#AtlasMania",
+    joined: "50"
+}, {
+    id: 3,
+    chatroom: "1YearOfBSE",
+    joined: "10"    // The Ids of the messages
+}, {
+    id: 4,
+    chatroom: "#theluckyonesmusic",
+    joined: "50"
+}, {
+    id: 5,
+    chatroom: "#MazCallMe",
+    joined: "10"    // The Ids of the messages
+}, {
+    id: 6,
+    chatroom: "#WorseMoonLanding",
+    joined: "50"
+}, {
+    id: 7,
+    chatroom: "Michael Rogers",
+    joined: "10"    // The Ids of the messages
+}, {
+    id: 8,
+    chatroom: "ObamaCare",
+    joined: "50"
+}, {
+    id: 9,
+    chatroom: "Justin Bieber",
+    joined: "10"    // The Ids of the messages
+}, {
+    id: 10,
+    chatroom: "#RaiseTheWage",
+    joined: "50"
+}, {
+    id: 11,
+    chatroom: "#LGBT ",
+    joined: "10"    // The Ids of the messages
+}, {
+    id: 12,
+    chatroom: "#MyBrothersKeeper ",
+    joined: "50"
+}, {
+    id: 13,
+    chatroom: "#RebuildAmerica",
+    joined: "10"    // The Ids of the messages
+}, {
+    id: 14,
+    chatroom: "#ActOnClimate",
+    joined: "50"
+}, {
+    id: 15,
+    chatroom: "#swag",
+    joined: "10"    // The Ids of the messages
+}, {
+    id: 17,
+    chatroom: "#dansahomo",
     joined: "50"
 }];
 
