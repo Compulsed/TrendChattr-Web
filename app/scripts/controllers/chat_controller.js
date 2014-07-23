@@ -32,8 +32,10 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 			newMessage.save();
 			// Forces the text box to the bottom of the div
 			// This is normal DOM javascript
-			var elem = document.getElementById('chat-messages');
-			elem.scrollTop = elem.scrollHeight;
+			Ember.run.schedule( 'afterRender', function () {
+				var chatBox = document.getElementById('chat-messages');
+				chatBox.scrollTop = chatBox.scrollHeight;
+			});
 
 			this.socket.emit('message', {
 				chatroom: this.get("id"),
