@@ -1,7 +1,11 @@
+Trendchattr.ApplicationController = Ember.ObjectController.extend({
+	username: 'Anon1'
+});
+
 Trendchattr.RoomsController = Ember.ArrayController.extend({
-  totalRooms: function(){
-    return this.get('model.length');
-  }.property('@each')
+	totalRooms: function(){
+		return this.get('model.length');
+	}.property('@each')
 });
 
 Trendchattr.RoomController = Ember.ObjectController.extend({
@@ -25,8 +29,7 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 			var newMessage = this.store.createRecord('message', {
 				username: this.get('application.username'),
 				message: messageText,
-				chatroom: this.store.getById('chatroom', this.get('id')),
-				sent: Date.now
+				chatroom: this.store.getById('chatroom', this.get('id'))
 			});
 
 			newMessage.save();
@@ -36,7 +39,8 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 			elem.scrollTop = elem.scrollHeight;
 
 			this.socket.emit('message', {
-				chatroom: this.get("id"),
+				chatroom_id: this.get('id'),
+				chatroom: this.store.getById('chatroom', this.get('id')),
 				username: this.get('application.username'),
 				message: messageText
 			});
@@ -47,13 +51,14 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 		message: function(messageData){
 			console.log(messageData);
 			var newMessage = this.store.createRecord('message', {
-				chatroom: this.store.getById('chatroom', this.get(messageData.trend)),
+				chatroom: this.store.getById('chatroom', this.get(messageData.chatroom_id)),
 				username: messageData.username,
-				message: messageData.message,
-				sent: messageData.sent
+				message: messageData.message
 			});
 
 			newMessage.save();
+			var thisChatroom = this.store.getById('chatroom', this.get(messageData.chatroom_id));
+			thisChatroom.chatMessages.pushObject(newMessage);
 		},
 		connect: function() {
 			console.log("Just connected");

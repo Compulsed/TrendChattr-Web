@@ -65,11 +65,8 @@ Trendchattr.User.FIXTURES = [{
 */
 Trendchattr.Message = DS.Model.extend({
     chatroom: DS.belongsTo('chatroom'),
-    username: DS.attr('string'),            // Not a reference for obvious reasons, but maybe could be?
-    message: DS.attr('string'),
-    sent: DS.attr('date', {
-        defaultValue: function() { return new Date(); }
-    })
+    username: DS.attr('string'),
+    message: DS.attr('string')
 });
 
 Trendchattr.Message.FIXTURES = [{
@@ -84,8 +81,9 @@ Trendchattr.Message.FIXTURES = [{
     The Chatroom
 */
 Trendchattr.Chatroom = DS.Model.extend({
+    id: Number,
     chatroom: DS.attr('string'),
-    joined: DS.attr('number', {defaultValue: false}),
+    joined: DS.attr('number', {defaultValue: 0}),
     chatMessages: DS.hasMany('message')
 });
 

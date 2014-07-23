@@ -4,7 +4,7 @@ var Trendchattr = window.Trendchattr = Ember.Application.create({
     Socket: EmberSockets.extend({
 	    host: 'localhost',
 	    port: 8080,
-	    controllers: ['chat']
+	    controllers: ['room']
 	})
 });
 
