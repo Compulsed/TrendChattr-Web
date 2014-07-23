@@ -1,8 +1,23 @@
 Trendchattr.ApplicationController = Ember.ObjectController.extend({
-	username: 'Anon1'
+	username: 'Anon1',
 });
 
 Trendchattr.RoomsController = Ember.ArrayController.extend({
+	sockets: {
+		message: function(messageData){
+			console.log(messageData);
+			var newMessage = this.store.createRecord('message', {
+				chatroom: this.store.getById('chatroom', messageData.chatroom_id),
+				username: messageData.username,
+				message: messageData.message
+			});
+
+			this.store.push('message', newMessage);
+
+			var thisChatroom = this.store.getById('chatroom', messageData.chatroom_id);
+			thisChatroom.get('chatMessages').pushObject(this.store.getById('message', {chatroom: newMessage.chatroom}));
+		}
+	},
 	totalRooms: function(){
 		return this.get('model.length');
 	}.property('@each')
@@ -45,27 +60,6 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 				message: messageText
 			});
 			return false;
-		}
-	},
-	sockets: {
-		message: function(messageData){
-			console.log(messageData);
-			var newMessage = this.store.createRecord('message', {
-				chatroom: this.store.getById('chatroom', this.get(messageData.chatroom_id)),
-				username: messageData.username,
-				message: messageData.message
-			});
-
-			newMessage.save();
-			var thisChatroom = this.store.getById('chatroom', this.get(messageData.chatroom_id));
-			thisChatroom.chatMessages.pushObject(newMessage);
-		},
-		connect: function() {
-			console.log("Just connected");
-		},
-		disconnect: function() {},
-		error: function(errorData){
-			console.log(errorData);
 		}
 	}
 });

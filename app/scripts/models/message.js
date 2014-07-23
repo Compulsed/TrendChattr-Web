@@ -59,7 +59,6 @@ Trendchattr.User.FIXTURES = [{
     online: true,
 }];
 
-
 /*
     The messages
 */
@@ -69,13 +68,7 @@ Trendchattr.Message = DS.Model.extend({
     message: DS.attr('string')
 });
 
-Trendchattr.Message.FIXTURES = [{
-    id: 1,
-    chatroom: 1,
-    username: "Annon",
-    message: "SOME MESSAGE"
-}];
-
+Trendchattr.Message.FIXTURES = [];
 
 /*
     The Chatroom
