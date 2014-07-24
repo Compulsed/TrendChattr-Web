@@ -1,6 +1,16 @@
 Trendchattr.ApplicationController = Ember.ObjectController.extend({
 	username: 'Anon1',
+
 });
+
+Trendchattr.RoomsIndexController = Ember.ArrayController.extend({
+	actions: {
+		join: function(chatroom){
+			this.socket.emit('join', chatroom);
+			return false;
+		}
+	}
+})
 
 Trendchattr.RoomsController = Ember.ArrayController.extend({
 	sockets: {
@@ -16,6 +26,15 @@ Trendchattr.RoomsController = Ember.ArrayController.extend({
 
 			var thisChatroom = this.store.getById('chatroom', messageData.chatroom_id);
 			thisChatroom.get('chatMessages').pushObject(this.store.getById('message', {chatroom: newMessage.chatroom}));
+
+			var elem = document.getElementById('chat-messages');
+			elem.scrollTop = elem.scrollHeight;
+		}
+	},
+	actions: {
+		join: function(chatroom){
+			this.socket.emit('join', chatroom);
+			return false;
 		}
 	},
 	totalRooms: function(){
@@ -38,8 +57,6 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
 			if (!messageText.trim()) { return; }
 
 			this.set('newMessage', '');					// Clears the text
-
-			var thisChatroom = this.store.find('chatroom', this.get('id'));
 
 			var newMessage = this.store.createRecord('message', {
 				username: this.get('application.username'),

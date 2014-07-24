@@ -6,8 +6,8 @@
     <div class="well room-selection">
         <ul>
         {{#each chatroom in model}}
-            {{#link-to "room" chatroom.id}}
-                <li>{{chatroom.chatroom}} <span class="glyphicon glyphicon-chevron-up pull-right"></span></li>
+            {{#link-to "room" chatroom.id }}
+                <li {{action 'join' chatroom.chatroom}}>{{chatroom.chatroom}}  <span class="glyphicon glyphicon-chevron-up pull-right"></span></li>
             {{/link-to}}
         {{/each}}
         </ul>
