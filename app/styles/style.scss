@@ -1,12 +1,21 @@
 $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 
+
+
+$primary-color: #5CADFF;
+$stronger-color: #0066FF;
+
+$light-color: #ddefff;
+
+$head-text: white;
+
 /* Put your CSS here */
 html, body {
     margin: 0px;
     padding: 0px;
 
-    background: #C3E1FF;
+    background: $light-color;
 
 }
 
@@ -16,28 +25,28 @@ html, body {
 */
 
 .navbar{
-  background: #5CADFF;
-  border-color: #0066FF;
+  background: $primary-color;
+  border-color: $stronger-color;
 }
 
 .navbar-brand{
-  color: white !important;
+  color: $head-text !important;
   font-weight: 800;
   letter-spacing:1px;
 }
 
 
 .navbar-nav .active{
-  background: #C3E1FF !important;
+  background: $light-color !important;
 }
 
 
 .navbar-nav li a{
-  color: white !important;
+  color: $head-text !important;
 }
 
 .navbar-nav li .active{
-  color: #0066FF !important;
+  color: $stronger-color !important;
 }
 
 
@@ -161,8 +170,8 @@ html, body{
 }
 
 .room-selection ul a li:hover{
-  background: #C3E1FF;
-  border: 1px solid #0066FF;
+  background: $light-color;
+  border: 1px solid $stronger-color;
 }
 
 .room-selection .glyphicon{
@@ -227,8 +236,8 @@ html, body{
   margin-left: -12px;
   margin-top: 20px;
 
-  background: #5CADFF;
-  border: 1px solid #0066FF;
+  background: $primary-color;
+  border: 1px solid $stronger-color;
 
   padding: 5px 10px;
   color: rgb(250, 250, 250);
@@ -240,7 +249,7 @@ html, body{
 }
 
 .sidepanel .btn-toggle:hover {
-  color: #0066FF;
+  color: $stronger-color;
 }
 
 .sidepanel a{
@@ -318,11 +327,11 @@ html, body{
     transition: all 1s ease;
 
     border: 1px solid white;
-    color: white;
+    color: $head-text;
     background: rgb(50,150,200);
 }
 
 .cover-container .glyphicon{
   font-size: 132px;
-  color: #5CADFF;
+  color: $primary-color;
 }
