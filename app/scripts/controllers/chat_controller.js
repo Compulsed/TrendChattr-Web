@@ -1,6 +1,5 @@
 Trendchattr.ApplicationController = Ember.ObjectController.extend({
     username: 'Anon1',
-
 });
 
 Trendchattr.RoomsIndexController = Ember.ArrayController.extend({
@@ -24,7 +23,7 @@ Trendchattr.RoomsController = Ember.ArrayController.extend({
 
             this.store.push('message', newMessage); // Pushes the new message
 
-            var thisChatroom = this.store.getById('chatroom', messageData.chatroom_id);
+            // var thisChatroom = this.store.getById('chatroom', messageData.chatroom_id);
 
             Ember.run.scheduleOnce('afterRender', this, function(){
                 var elem = document.getElementById('chat-messages');
