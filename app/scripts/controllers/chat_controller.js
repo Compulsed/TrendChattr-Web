@@ -1,5 +1,10 @@
 Trendchattr.ApplicationController = Ember.ObjectController.extend({
     username: 'Anon1',
+    actions: {
+        loading: function(transition, originRoute) {
+            console.log("Loading event fired");
+        }
+    }
 });
 
 Trendchattr.RoomsIndexController = Ember.ArrayController.extend({

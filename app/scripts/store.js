@@ -6,8 +6,7 @@ Trendchattr.ApplicationAdapter = DS.RESTAdapter.extend({
 Trendchattr.ApplicationSerializer = DS.RESTSerializer.extend({
 	normalizeHash: {
 		chatrooms: function(hash) {
-			hash.id = hash._id;
-			delete hash._id;
+			hash.id = hash.chatroom;
 			return hash;
 		}
 	}
