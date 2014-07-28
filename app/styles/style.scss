@@ -41,6 +41,7 @@ html, body {
 .navbar{
   background: $primary-color;
   border-color: $secondary-color;
+  box-shadow: 0px 1px 5px black;
 }
 
 .navbar-brand{
