@@ -53,7 +53,8 @@ Trendchattr.User.FIXTURES = [{
 Trendchattr.Message = DS.Model.extend({
     chatroom: DS.belongsTo('chatroom'),
     username: DS.attr('string'),
-    message: DS.attr('string')
+    message: DS.attr('string'),
+    myMessage: DS.attr('boolean', {defaultValue: false})
 });
 
 Trendchattr.Message.FIXTURES = [];
