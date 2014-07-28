@@ -26,9 +26,6 @@ Trendchattr.RoomsController = Ember.ArrayController.extend({
 
             var thisChatroom = this.store.getById('chatroom', messageData.chatroom_id);
 
-            // thisChatroom.get('chatMessages').pushObject(this.store.getById('message', {chatroom: newMessage.chatroom}));
-
-
             Ember.run.scheduleOnce('afterRender', this, function(){
                 var elem = document.getElementById('chat-messages');
                 elem.scrollTop = elem.scrollHeight;

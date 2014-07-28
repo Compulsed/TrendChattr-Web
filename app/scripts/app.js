@@ -1,14 +1,12 @@
 var Trendchattr = window.Trendchattr = Ember.Application.create({
 	LOG_TRANSITIONS: true,
-
+	LOG_ACTIVE_GENERATION: true,
     Socket: EmberSockets.extend({
 	    host: 'localhost',
 	    port: 8080,
 	    controllers: ['rooms']
 	})
 });
-
-Trendchattr.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 /* Order and include as you please. */
 require('scripts/controllers/*');

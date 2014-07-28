@@ -1,14 +1,16 @@
 // Top level
 Trendchattr.ApplicationRoute = Ember.Route.extend({
     model: function () {
-        return this.store.find('user', 1);
+        return {
+            id: 1,
+            username: "bob",
+            online: true
+        }
     },
 
     setupController: function(controller, model){
         // Allows you to preserve the useage of the model hook
         this._super(controller, model);
-
-
     }
 });
 
