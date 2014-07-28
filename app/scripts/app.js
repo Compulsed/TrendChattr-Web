@@ -2,8 +2,8 @@ var Trendchattr = window.Trendchattr = Ember.Application.create({
 	LOG_TRANSITIONS: true,
 	LOG_ACTIVE_GENERATION: true,
     Socket: EmberSockets.extend({
-	    host: 'localhost',
-	    port: 8080,
+	    host: 'api.trendchattr.com', // was: localhost
+	    port: 80,
 	    controllers: ['rooms']
 	})
 });

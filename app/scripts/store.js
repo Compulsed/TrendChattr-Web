@@ -1,5 +1,5 @@
 Trendchattr.ApplicationAdapter = DS.RESTAdapter.extend({
-	host: 'http://localhost:8080',
+	host: 'http://api.trendchattr.com', // was: http://localhost:8080
 	namespace: 'api/dev'
 });
 
