@@ -61,7 +61,8 @@ Trendchattr.RoomController = Ember.ObjectController.extend({
             var newMessage = this.store.createRecord('message', {
                 username: this.get('application.username'),
                 message: messageText,
-                chatroom: this.store.getById('chatroom', this.get('id'))
+                chatroom: this.store.getById('chatroom', this.get('id')),
+                myMessage: true
             });
 
             newMessage.save();
