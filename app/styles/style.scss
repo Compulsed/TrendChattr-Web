@@ -2,31 +2,45 @@ $icon-font-path: "../styles/fonts/"; // Change the path to the fonts
 @import "bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 
 
-
-$primary-color: #5CADFF;
-$stronger-color: #0066FF;
-
-$light-color: #ddefff;
-
 $head-text: white;
+/* Primary colour for top bar */
+$secondary-color: rgb(87, 184, 215);
+
+/* Colour that usually complements the Primary colour, with borders */
+$primary-color: rgb(99, 156, 183);
+
+/* The colour used for the background */
+$background-color: rgb(250, 250, 250);
+
+/* Box shadow colour used
+   old:  1px 1px 10px 0px rgba(0, 112, 255, 0.4);
+*/
+$container-box-shadow: none;
+
+
+/* Chat bubble colors */
+$yours-background: rgba(100, 150, 250, .3);
+$yours-border: $secondary-color;
+
+$theirs-background: rgb(230, 230, 230);
+$theirs-border: 1px solid #999999;
+
 
 /* Put your CSS here */
 html, body {
     margin: 0px;
     padding: 0px;
 
-    background: $light-color;
-
+    background: $background-color;
 }
 
 
 /*
   : Bootstrap Colour changes
 */
-
 .navbar{
   background: $primary-color;
-  border-color: $stronger-color;
+  border-color: $secondary-color;
 }
 
 .navbar-brand{
@@ -37,7 +51,7 @@ html, body {
 
 
 .navbar-nav .active{
-  background: $light-color !important;
+  background: $background-color !important;
 }
 
 
@@ -46,7 +60,7 @@ html, body {
 }
 
 .navbar-nav li .active{
-  color: $stronger-color !important;
+  color: $secondary-color !important;
 }
 
 
@@ -77,8 +91,7 @@ html, body{
 
 .well{
   border: 1px solid #999999 !important;
-  box-shadow:  1px 1px 10px 0px rgba(0, 112, 255, 0.4);
-
+  box-shadow:  $container-box-shadow;
 }
 
 #main {
@@ -86,37 +99,25 @@ html, body{
 	margin: 71px 0;
 }
 
-.col-username {
-	text-align: right;
-}
-
-.username {
-	color: green;
-}
-
-.user-id-1 {
-	color: blue;
-}
-
 .message-row{
-  margin: 10px 0 10px;
+  margin: 5px 0 5px;
 }
 
 .message{
   border: 1px solid #aaa;
-  padding: 20px;
+  padding: 10px;
 
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .message-yours{
-  border-color: rgba(0, 180, 0, .8);
-  background: rgba(100, 250, 100, .2);
+  border-color: $yours-border;
+  background: $yours-background;
 }
 
 .message-theirs{
-  border-color: rgba(180, 0, 0, .8);
-  background: rgba(250, 100, 100, .2);
+  border-color: $theirs-border;
+  background: $theirs-background;
 }
 
 
@@ -138,8 +139,7 @@ html, body{
    border: 1px solid #999999;
    border-radius: 3px;
    background: white;
-   box-shadow:  1px 1px 10px 0px rgba(0, 112, 255, 0.4);
-
+   box-shadow: $container-box-shadow;
 
    overflow: scroll;
 }
@@ -147,9 +147,6 @@ html, body{
 /*
   : Room styling;
 */
-
-
-
 .room-selection ul{
   margin: 0;
   padding: 0;
@@ -170,8 +167,8 @@ html, body{
 }
 
 .room-selection ul a li:hover{
-  background: $light-color;
-  border: 1px solid $stronger-color;
+  background: $background-color;
+  border: 1px solid $secondary-color;
 }
 
 .room-selection .glyphicon{
@@ -194,18 +191,7 @@ html, body{
   width: 200px;
   height: 100%;
 
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    color-stop(0, #4D4D4D),
-    color-stop(1, #373737)
-  );
-  background-image: -o-linear-gradient(right, #4D4D4D 0%, #373737 100%);
-  background-image: -moz-linear-gradient(right, #4D4D4D 0%, #373737 100%);
-  background-image: -webkit-linear-gradient(right, #4D4D4D 0%, #373737 100%);
-  background-image: -ms-linear-gradient(right, #4D4D4D 0%, #373737 100%);
-  background-image: linear-gradient(to right, #4D4D4D 0%, #373737 100%);
+  background: #373737;
 
   border: 1px solid black;
   z-index: 100;
@@ -237,7 +223,7 @@ html, body{
   margin-top: 20px;
 
   background: $primary-color;
-  border: 1px solid $stronger-color;
+  border: 1px solid $secondary-color;
 
   padding: 5px 10px;
   color: rgb(250, 250, 250);
@@ -249,7 +235,7 @@ html, body{
 }
 
 .sidepanel .btn-toggle:hover {
-  color: $stronger-color;
+  color: $secondary-color;
 }
 
 .sidepanel a{
@@ -259,11 +245,11 @@ html, body{
 .sidepanel li{
   width: 100%;
   height: 30px;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
 
   margin: 2px 0 2px 0;
 
-  color: #fafafa;
+  color: rgb(203, 203, 203);
 
   padding-left: 10px;
   padding-top: 5px;
@@ -277,6 +263,13 @@ html, body{
 
 .sidepanel .glyphicon{
   margin-right: 5px;
+}
+
+.truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*

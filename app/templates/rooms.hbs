@@ -4,7 +4,7 @@
     <!-- // is placed within the yield of the component -->
     {{#each chatroom in model}}
         {{#link-to "room" chatroom.id}}
-            <li {{action 'join' chatroom.chatroom}}><span class="glyphicon glyphicon-star"></span> {{chatroom.chatroom}}</li>
+            <li class="truncate" {{action 'join' chatroom.chatroom}}><span class="glyphicon glyphicon-star"></span> {{chatroom.chatroom}}</li>
         {{/link-to}}
     {{/each}}
 </div>
